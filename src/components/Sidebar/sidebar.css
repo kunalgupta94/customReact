@@ -1,0 +1,13 @@
+.sidebar {
+  background-color: #cf5c36;
+  position: absolute;
+  width: 20vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+}
+
+.sidebarCollpased {
+    width: 4vw;
+}
+

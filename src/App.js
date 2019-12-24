@@ -1,10 +1,10 @@
 import React from 'react'
-import Test from './components/Test';
+import ArticleLayout from './components/Layouts/ArticleLayout/ArticleLayout'
 
 const App = () => {
     return (
-        <div className='main'>
-            <Test />
+        <div id="root">
+            <ArticleLayout />
         </div>
     )
 }

@@ -1,0 +1,9 @@
+.button {
+    height: 50px;
+    pointer-events: none;
+    fill: red;
+}
+
+.prevButton {
+    transform: rotate(180deg);
+}
