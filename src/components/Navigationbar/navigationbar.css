@@ -1,0 +1,40 @@
+.button {
+    cursor: pointer;
+    margin: 3vh 1vw;
+}
+.navigationbar_main {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.74);
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleBox {
+    background-color: rgba(196,196,196,.21);
+    max-width: 15vw;
+    width: 30vmin;
+    height: 4vh;
+    display: flex;
+    color: white;
+    line-height: 4vh;
+    overflow: hidden;
+}
+
+.moreTitles {
+    width: 4vh;
+    height: 4vh;
+    background-color: rgba(196,196,196,.64);
+    display: flex;
+    flex-shrink: 0;
+    line-height: 4vh;
+    cursor: pointer;
+}
+
+.titleText {
+    padding: 0 1vh;
+    font-size: 2vh;
+    cursor: pointer;
+}

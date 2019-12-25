@@ -1,0 +1,7 @@
+.rotated {
+    transform: rotate(180deg);
+}
+
+.triangleButton {
+    display: block;
+}
