@@ -18,7 +18,7 @@ function ArticleLayout() {
     const setTimeOut = () => setTimeout(() => hideNavigation(true), 2000);
     const mouseOnBottom = e => 100 - (100 * e.y) / e.view.innerHeight < 5;
     const containerHidden = () => containerRef.style.display === "none";
-    const mouseOnNavigator = e => e.path[0] === containerRef;
+    const mouseOnNavigator = e => e.path.includes(containerRef);
     hideNavigation(false);
 
     const eventListenFunc = e => {
@@ -43,7 +43,7 @@ function ArticleLayout() {
         <Sidebar />
       </div>
       <div className="maindiv">
-        <h1 className="title">Data Chapter</h1>
+        <h1 className="title">Random Title Text</h1>
         <p className="body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in
           aliquet odio. Nunc at lacinia magna, in tristique nisl. Nullam

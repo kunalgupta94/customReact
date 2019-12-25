@@ -27,7 +27,18 @@ module.exports = {
             loader: "file-loader"
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|jpg|gif|cur)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [
