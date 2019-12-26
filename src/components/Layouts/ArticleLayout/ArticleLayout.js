@@ -34,7 +34,15 @@ function ArticleLayout() {
         containerRef.style.display = "flex";
       }
     };
+
+    const pageClickListner = e => {
+      if (!mouseOnNavigator(e)) {
+        hideNavigation(true)
+      }
+    }
+
     window.addEventListener("mousemove", e => eventListenFunc(e));
+    window.addEventListener("click", e => pageClickListner(e))
   }, []);
 
   return (
@@ -92,8 +100,8 @@ function ArticleLayout() {
           lacinia maximus sem in mollis. Suspendisse ut purus volutpat libero
           fermentum egestas.
         </p>
+        <Navigationbar ref={el => (containerRef = el)} />
       </div>
-      <Navigationbar ref={el => (containerRef = el)} />
     </div>
   );
 }
