@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Slab&display=swap");
 
-.title {
-  font-size: 7vh;
-  font-family: "Roboto Slab", serif;
-  color: #fffaff;
-  margin: 20vh auto auto auto;
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-}
-
 .body {
   font-family: "Lato", sans-serif;
   color: #fffaff;
@@ -26,7 +17,6 @@
 }
 
 .sidebardiv {
-    width: 100%;
     z-index: 100;
 }
 

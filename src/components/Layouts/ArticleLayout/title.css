@@ -1,0 +1,67 @@
+.editableInput {
+  font-family: inherit;
+  color: #fffaff;
+  /* box-sizing: border-box; */
+  background-color: transparent;
+  text-align: inherit;
+  border: 0.05em solid transparent;
+  border-radius: 0.2em;
+  outline: none;
+  /* padding: 0.1vh; */
+  /* line-height: inherit; */
+  word-wrap: break-word;
+  display: block;
+  width: fit-content;
+  line-height: inherit;
+  /* margin: 0.1vh; */
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.editEditableInputTitle {
+  border: 0.05em solid #67b0d6;
+  /* box-sizing: ; */
+  /* padding: 0.1vh; */
+  /* box-sizing: border-box; */
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  resize: none;
+  overflow: hidden;
+  width: fit-content;
+  text-align: inherit;
+  /* margin: 0.1vh;  */
+  font-size: inherit;
+}
+
+/* .inputBorder {
+    border-radius: 0.2em;
+    border: 0.05em solid #67b0d6 ;
+} */
+
+/* .titleEdit {
+    background-color: transparent;
+    line-height: 0;
+    text-align: center;
+    padding: 0;
+}    */
+
+.title {
+  font-size: 7vh;
+    font-family: "Roboto Slab", serif;
+    color: #fffaff;
+    margin: 20vh auto auto auto;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    box-sizing: border-box;
+    background-color: transparent;
+    text-align: center;
+    border: 0.05em solid transparent;
+    border-radius: 0.2em;
+    outline: none;
+    padding: 0.1vh;
+  line-height: 1em;
+  word-wrap: break-word;
+  width: max-content;
+}

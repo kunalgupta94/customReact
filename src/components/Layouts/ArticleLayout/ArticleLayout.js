@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./articleLayout.css";
 import Sidebar from "../../Sidebar/Sidebar";
 import Navigationbar from "../../Navigationbar/Navigationbar";
+import Title from "./Title";
+import './title.css'
 function ArticleLayout() {
   let containerRef;
-
   useEffect(() => {
     let timeOutValue = 0;
 
@@ -39,6 +40,7 @@ function ArticleLayout() {
       if (!mouseOnNavigator(e)) {
         hideNavigation(true)
       }
+      console.log("value")
     }
 
     window.addEventListener("mousemove", e => eventListenFunc(e));
@@ -51,8 +53,11 @@ function ArticleLayout() {
         <Sidebar />
       </div>
       <div className="maindiv">
-        <h1 className="title">Random Title Text</h1>
-        <p className="body">
+        <h1 className="title">
+        <Title editable maxLength="50" rows="1" placeholder="Enter a title" />
+        </h1>
+        {/* <Title className="body" editable maxLength="1000" rows="8" placeholder="Enter body" /> */}
+        <p >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in
           aliquet odio. Nunc at lacinia magna, in tristique nisl. Nullam
           facilisis dolor volutpat pharetra congue. Vestibulum egestas gravida
