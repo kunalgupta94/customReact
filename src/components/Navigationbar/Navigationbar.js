@@ -44,7 +44,6 @@ class Navigationbar extends React.Component {
       if (!mouseOnNavigator(e)) {
         hideNavigation(true);
       }
-      console.log("value");
     };
 
     window.addEventListener("mousemove", e => eventListenFunc(e));

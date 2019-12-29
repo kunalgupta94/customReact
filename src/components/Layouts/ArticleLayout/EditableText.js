@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./title.css";
+import "./editableInput.css";
 
 class EditableText extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class EditableText extends Component {
         this.setState({ edit: true });
       }
     });
-    window.addEventListener("click", e => listnerHandler(e));
+    window.addEventListener("mousedown", e => listnerHandler(e));
     const listnerHandler = e => {
       const { text } = this.state;
       if (editable && e.target !== this.inputRef.current && text !== "") {

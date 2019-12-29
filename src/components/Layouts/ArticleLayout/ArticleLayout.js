@@ -3,7 +3,7 @@ import "./articleLayout.css";
 import Sidebar from "../../Sidebar/Sidebar";
 import Navigationbar from "../../Navigationbar/Navigationbar";
 import EditableText from "./EditableText";
-import "./title.css";
+
 class ArticleLayout extends React.Component {
   constructor(props) {
     super(props);
