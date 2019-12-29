@@ -4,20 +4,39 @@
   font-family: "Lato", sans-serif;
   color: #fffaff;
   font-size: 4vh;
-  margin: 10vw;
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
-  text-align: justify;  
+  /* margin: 10vw; */
+  text-align: justify;
   cursor: url("Union.cur"), auto;
+  box-sizing: border-box;
+  text-align: left;
+  word-wrap: break-word;
+  width: 100%;
+  margin: 5vh auto;
+}
+.title {
+  font-size: 7vh;
+  font-family: "Roboto Slab", serif;
+  color: #fffaff;
+  margin: 20vh auto auto auto;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  width: 100%;
+  text-align: left;
+}
+
+.contentContainer {
+  padding: 0 10vw;
 }
 
 .maindiv {
-    flex-direction: column;
-    overflow-y: scroll;
+  flex-direction: column;
+  overflow-y: scroll;
+  display: block;
+  width: 100%;
 }
 
 .sidebardiv {
-    z-index: 100;
+  z-index: 100;
 }
 
 .layoutmain {
@@ -25,7 +44,8 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  text-align: center;
+  text-align: justify;
   flex-direction: row;
+  word-wrap: break-word;
   position: fixed;
 }

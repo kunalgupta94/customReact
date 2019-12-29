@@ -1,14 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 
-const Sidebar = () => {
-  const [isCollapsed, setCollapsed] = useState(false)
+class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isCollapsed: true
+    };
+    this.sidebarRef = React.createRef();
+  }
 
-  return (
-    <div className={`sidebar ${isCollapsed ? null : 'sidebarCollpased'}`}>
-        <button onClick={() => setCollapsed(!isCollapsed)}>></button>
-    </div>
-  );
-};
+  componentDidMount() {
+    const closeSidebar = e => {
+      const { isCollapsed } = this.state;
+      if (e.target.className === 'maindiv' && isCollapsed == false) {
+        this.setCollapsed(true);
+      }
+    };
+    window.addEventListener("click", e => closeSidebar(e));
+  }
+
+  setCollapsed(value) {
+    this.setState({
+      isCollapsed: value
+    });
+  }
+
+  render() {
+    const { isCollapsed } = this.state;
+    return (
+      <div
+        ref={this.sidebarRef}
+        className={`sidebar ${isCollapsed ? "sidebarCollpased" : null}`}
+      >
+        <button onClick={() => this.setCollapsed(!isCollapsed)}>></button>
+      </div>
+    );
+  }
+}
 
 export default Sidebar;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./title.css";
 
-
 class Title extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +12,9 @@ class Title extends Component {
   }
 
   componentDidMount() {
+    this.setState({
+      edit: this.props.edit
+    });
     const listnerHandler = e => {
       if (
         this.props.editable &&
@@ -27,24 +29,17 @@ class Title extends Component {
 
   handleInput(e) {
     this.setState({ text: e.target.value });
-    console.log(
-        `offsetHeight:${this.titleInput.offsetHeight}`,
-        `clientHeight: ${this.titleInput.clientHeight}`,
-        `scrollHeight: ${this.titleInput.scrollHeight}`,
-        `endHeight: ${this.titleInput.style.height}`,
-        `minus: ${this.titleInput.scrollHeight - this.titleInput.scrollTop}`
-      );
+    // console.log(
+    //     `offsetHeight:${this.titleInput.offsetHeight}`,
+    //     `clientHeight: ${this.titleInput.clientHeight}`,
+    //     `scrollHeight: ${this.titleInput.scrollHeight}`,
+    //     `endHeight: ${this.titleInput.style.height}`,
+    //     `minus: ${this.titleInput.scrollHeight - this.titleInput.scrollTop}`
+    //   );
     let remainingHeigt =
       this.titleInput.offsetHeight - this.titleInput.clientHeight;
-    this.titleInput.style.height = "";
-    this.titleInput.style.height = `${this.titleInput.scrollHeight}px`;
-      console.log(
-        `offsetHeight:${this.titleInput.offsetHeight}`,
-        `clientHeight: ${this.titleInput.clientHeight}`,
-        `scrollHeight: ${this.titleInput.scrollHeight}`,
-        `endHeight: ${this.titleInput.style.height}`,
-        `minus: ${this.titleInput.scrollHeight - this.titleInput.scrollTop}`
-      );
+    this.titleInput.style.height = `${this.titleInput.scrollHeight +
+      parseInt(remainingHeigt)}px`;
   }
 
   render() {
@@ -53,11 +48,11 @@ class Title extends Component {
     return editable ? (
       edit ? (
         <textarea
-        //   onFocus={e => {
-        //     let remainingHeigt = e.target.offsetHeight - e.target.clientHeight;
-        //     e.target.style.height = `${e.target.scrollHeight +
-        //       remainingHeigt}px`;
-        //   }}
+          onFocus={e => {
+            let remainingHeigt = e.target.offsetHeight - e.target.clientHeight;
+            e.target.style.height = `${e.target.scrollHeight +
+              parseInt(remainingHeigt)}px`;
+          }}
           ref={e => (this.titleInput = e)}
           rows={rows}
           autoFocus
@@ -69,7 +64,8 @@ class Title extends Component {
           maxLength={maxLength}
         />
       ) : (
-        <span className="editableInput"
+        <span
+          className="editableInput editHover"
           onDoubleClick={() => this.setState({ edit: true })}
         >
           {text}
