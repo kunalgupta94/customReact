@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./articleLayout.css";
-import Sidebar from "../../Sidebar/Sidebar";
-import Navigationbar from "../../Navigationbar/Navigationbar";
-import EditableText from "./EditableText";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import Navigationbar from "../../components/Navigationbar/Navigationbar";
+import EditableText from "../../components/EditableInput/EditableText";
 
 class ArticleLayout extends React.Component {
   constructor(props) {
