@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleLayout from "./Layouts/ArticleLayout/ArticleLayout";
+import ArticleLayout from "./container/ArticleLayout/ArticleLayout";
 import Login from "./Layouts/Login/Login";
 import { Switch, Route, Link } from "react-router-dom";
 import Routes from './Routes';

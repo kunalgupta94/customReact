@@ -22,7 +22,7 @@ class Temporary extends Component {
           {({ loading, err, data }) => {
             if (!loading) {
               return data.articles.map(article => (
-                <Link to={`/article/${article._id}`}>{article.title}</Link>
+                <Link key={article._id} to={`/article/${article._id}`}>{article.title}</Link>
               ));
             }
             return null;

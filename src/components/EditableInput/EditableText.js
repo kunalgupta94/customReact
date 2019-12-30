@@ -11,6 +11,15 @@ class EditableText extends Component {
     };
   }
 
+  listnerHandler(e) {
+    const { text } = this.state;
+    const { editable } = this.props;
+    console.log("clicked")
+    if (editable && e.target !== this.inputRef.current && text !== "") {
+      this.setState({ edit: false });
+    }
+  };
+
   componentDidMount() {
     const { edit, editable, value } = this.props;
     this.setState({ edit: edit, text: value }, () => {
@@ -19,18 +28,17 @@ class EditableText extends Component {
         this.setState({ edit: true });
       }
     });
-    window.addEventListener("mousedown", e => listnerHandler(e));
-    const listnerHandler = e => {
-      const { text } = this.state;
-      if (editable && e.target !== this.inputRef.current && text !== "") {
-        this.setState({ edit: false });
-      }
-    };
+    window.addEventListener("mousedown", e => this.listnerHandler(e));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("mousedown", e => this.listnerHandler(e))
   }
 
   setInputHeight(inputRef) {
     let remain = inputRef.offsetHeight - inputRef.clientHeight;
-    inputRef.style.height = `${inputRef.scrollHeight + parseInt(remain)}px`;
+    inputRef.style.height = ''
+    inputRef.style.height = `${inputRef.scrollHeight}px`;
   }
 
   handleInput(e) {
@@ -48,7 +56,10 @@ class EditableText extends Component {
     return editable ? (
       edit ? (
         <textarea
-          onFocus={e => this.setInputHeight(e.target)}
+          onFocus={e => {
+            this.setInputHeight(e.target)
+            e.target.setSelectionRange(this.state.text.length, this.state.text.length)
+          }}
           ref={this.inputRef}
           rows={rows}
           autoFocus

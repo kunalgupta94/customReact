@@ -1,7 +1,7 @@
 .editableInput {
   font-family: inherit;
   color: #fffaff;
-  box-sizing: border-box;
+  box-sizing: content-box;
   background-color: transparent;
   border: 0.05em solid transparent;
   border-radius: 0.2em;
@@ -21,7 +21,7 @@
 
 .editEditableInputTitle {
   border: 0.05em solid #67b0d6;
-  box-sizing: border-box;
+  box-sizing: content-box;
   resize: none;
   width: inherit;
   border-radius: 0.2em;
