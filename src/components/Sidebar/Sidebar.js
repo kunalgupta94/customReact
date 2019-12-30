@@ -8,21 +8,27 @@ class Sidebar extends React.Component {
       isCollapsed: true
     };
     this.sidebarRef = React.createRef();
+    this.closeSidebar = this.closeSidebar.bind(this);
+  }
+
+  closeSidebar(e) {
+    const { isCollapsed } = this.state;
+    if (
+      e.target.id !== "editableInput" &&
+      e.target.id !== "editEditableInputTitle" &&
+      !e.path.includes(this.sidebarRef.current) &&
+      isCollapsed === false
+    ) {
+      this.setCollapsed(true);
+    }
   }
 
   componentDidMount() {
-    const closeSidebar = e => {
-      const { isCollapsed } = this.state;
-      if (
-        e.target.id !== "editableInput" &&
-        e.target.id !== "editEditableInputTitle" &&
-        !e.path.includes(this.sidebarRef.current) &&
-        isCollapsed === false
-      ) {
-        this.setCollapsed(true);
-      }
-    };
-    window.addEventListener("click", e => closeSidebar(e));
+    window.addEventListener("click", this.closeSidebar);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.closeSidebar);
   }
 
   setCollapsed(value) {

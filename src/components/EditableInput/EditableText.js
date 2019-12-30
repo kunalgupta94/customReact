@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./editableInput.css";
 
-class EditableText extends Component {
+class EditableText extends React.PureComponent {
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
@@ -9,16 +9,16 @@ class EditableText extends Component {
       text: "",
       edit: false
     };
+    this.listnerHandler = this.listnerHandler.bind(this);
   }
 
   listnerHandler(e) {
     const { text } = this.state;
     const { editable } = this.props;
-    console.log("clicked")
     if (editable && e.target !== this.inputRef.current && text !== "") {
       this.setState({ edit: false });
     }
-  };
+  }
 
   componentDidMount() {
     const { edit, editable, value } = this.props;
@@ -28,16 +28,16 @@ class EditableText extends Component {
         this.setState({ edit: true });
       }
     });
-    window.addEventListener("mousedown", e => this.listnerHandler(e));
+    window.addEventListener("mousedown", this.listnerHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousedown", e => this.listnerHandler(e))
+    window.removeEventListener("mousedown", this.listnerHandler);
   }
 
   setInputHeight(inputRef) {
     let remain = inputRef.offsetHeight - inputRef.clientHeight;
-    inputRef.style.height = ''
+    inputRef.style.height = "";
     inputRef.style.height = `${inputRef.scrollHeight}px`;
   }
 
@@ -57,8 +57,11 @@ class EditableText extends Component {
       edit ? (
         <textarea
           onFocus={e => {
-            this.setInputHeight(e.target)
-            e.target.setSelectionRange(this.state.text.length, this.state.text.length)
+            this.setInputHeight(e.target);
+            e.target.setSelectionRange(
+              this.state.text.length,
+              this.state.text.length
+            );
           }}
           ref={this.inputRef}
           rows={rows}
@@ -81,7 +84,9 @@ class EditableText extends Component {
         </span>
       )
     ) : (
-      <span id="nonEditableInput" className="editableInput">{text}</span>
+      <span id="nonEditableInput" className="editableInput">
+        {text}
+      </span>
     );
   }
 }

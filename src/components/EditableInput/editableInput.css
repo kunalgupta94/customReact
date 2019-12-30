@@ -12,6 +12,8 @@
   overflow: hidden;
   line-height: calc(100% + 1em);
   padding: 2vh;
+  width: inherit;
+  height: inherit;
 }
 
 .editHover:hover {
