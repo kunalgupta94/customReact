@@ -1,0 +1,22 @@
+.articleCard_main {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.articleCard_image {
+}
+
+.articleCard_name_div {
+  padding: 5px 0;
+}
+
+.articleCard_name_link {
+  text-decoration: none;
+  color: var(--main-white-color);
+  font-family: "Roboto Slab", serif;
+}
+
+.articleCard_name_link:hover {
+    text-decoration: none;
+}

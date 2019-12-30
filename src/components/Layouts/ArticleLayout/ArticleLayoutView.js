@@ -1,8 +1,8 @@
 import React from "react";
 import "./articleLayout.css";
-import Sidebar from "../Sidebar/Sidebar";
-import ArticleBar from "../ArticleBar/ArticleBar";
-import EditableText from "../EditableInput/EditableText";
+import Sidebar from "../../Sidebar/Sidebar";
+import ArticleBar from "../../ArticleBar/ArticleBar";
+import EditableText from "../../EditableInput/EditableText";
 
 const ArticleLayoutView = ({type, data}) => {
   const typeComponent = {

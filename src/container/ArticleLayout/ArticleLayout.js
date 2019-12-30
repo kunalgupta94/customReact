@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import gql from "graphql-tag";
 import { Query, withApollo } from "react-apollo";
-import ArticleLayoutView from "../../components/ArticleLayout/ArticleLayoutView";
+import ArticleLayoutView from "../../components/Layouts/ArticleLayout/ArticleLayoutView";
 
 class ArticleLayout extends React.Component {
   constructor(props) {

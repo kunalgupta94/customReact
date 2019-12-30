@@ -1,0 +1,9 @@
+:root {
+    --user-layout-height: 350px;
+}
+
+.user_header {
+    background-color: var(--color-four);
+    height: var(--user-layout-height);
+    width: 100%;
+}
