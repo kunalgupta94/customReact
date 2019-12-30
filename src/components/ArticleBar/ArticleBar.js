@@ -1,9 +1,9 @@
 import React from "react";
 import TriangleButton from "../../assets/TriangleButton";
-import "./navigationbar.css";
+import "./articleBar.css";
 import ListButton from "../../assets/ListButton";
 
-class Navigationbar extends React.Component {
+class ArticleBar extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
@@ -70,4 +70,4 @@ class Navigationbar extends React.Component {
   }
 }
 
-export default Navigationbar;
+export default ArticleBar;

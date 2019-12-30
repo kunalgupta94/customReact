@@ -14,7 +14,11 @@
   position: absolute;
   display: none;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.74);
+  background: linear-gradient(
+    to bottom,
+    var(--article-navbar-one),
+    var(--article-navbar-two)
+  );
   width: 100vw;
   align-items: center;
   justify-content: center;

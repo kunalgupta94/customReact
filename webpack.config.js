@@ -1,6 +1,13 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: "./src/index.js",
+  output: {
+    publicPath: "/"
+  },
+  devServer: {
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {
@@ -32,13 +39,13 @@ module.exports = {
         test: /\.(png|jpg|gif|cur)$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
+              limit: 8192
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [

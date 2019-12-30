@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Navigationbar from "../../components/Navigationbar/Navigationbar";
-import EditableText from "../../components/EditableInput/EditableText";
 import gql from "graphql-tag";
 import { Query, withApollo } from "react-apollo";
 import ArticleLayoutView from "../../components/ArticleLayout/ArticleLayoutView";
-
 
 class ArticleLayout extends React.Component {
   constructor(props) {
@@ -23,7 +19,9 @@ class ArticleLayout extends React.Component {
   }
 
   renderNewComponent() {
-    return <ArticleLayoutView type={this.typeComponent.new} data={this.state} />;
+    return (
+      <ArticleLayoutView type={this.typeComponent.new} data={this.state} />
+    );
   }
 
   renderComponentWithData(type) {
@@ -41,7 +39,9 @@ class ArticleLayout extends React.Component {
       return (
         <Query query={ARTICLE_QUERY}>
           {({ loading, err, data }) =>
-            !loading ? <ArticleLayoutView type={type} data={data.article} /> : null
+            !loading ? (
+              <ArticleLayoutView type={type} data={data.article} />
+            ) : null
           }
         </Query>
       );

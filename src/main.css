@@ -1,0 +1,26 @@
+:root {
+    --color-one: #D8DBE2;
+    --color-two: #A9BCD0;
+    --color-threee: #58A4B0; 
+    --color-four: #373F51;
+    --color-five: #1B1B1E;
+    
+  --main-background-color: #1b1b1e;
+  --main-primary-color: #58a4b0;
+  --sidebar-color: #58a4b0;
+  --main-white-color: #fffaff;
+  --article-navbar-one: transparent;
+  --article-navbar-two: var(--main-background-color);
+  --main-gray: #bfc0c0;
+}
+
+.layoutmain {
+  background-color: var(--main-background-color);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  text-align: justify;
+  flex-direction: row;
+  word-wrap: break-word;
+  position: fixed;
+}

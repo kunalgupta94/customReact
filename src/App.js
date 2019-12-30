@@ -4,6 +4,7 @@ import Login from "./Layouts/Login/Login";
 import { Switch, Route, Link } from "react-router-dom";
 import Routes from './Routes';
 import Temporary from "./Temporary";
+import './main.css';
 
 class App extends React.Component {
   render() {

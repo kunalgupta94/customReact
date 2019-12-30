@@ -1,0 +1,17 @@
+.navbar_main {
+    background-color: var(--main-primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5.5vh;
+    display: flex;
+}
+
+.navbar_hamburger_options {
+    background: transparent;
+    padding: 1vh;
+    border: none;
+    display: flex;
+    align-self: center;
+}

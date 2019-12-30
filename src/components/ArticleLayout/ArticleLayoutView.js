@@ -1,7 +1,7 @@
 import React from "react";
 import "./articleLayout.css";
 import Sidebar from "../Sidebar/Sidebar";
-import Navigationbar from "../Navigationbar/Navigationbar";
+import ArticleBar from "../ArticleBar/ArticleBar";
 import EditableText from "../EditableInput/EditableText";
 
 const ArticleLayoutView = ({type, data}) => {
@@ -57,7 +57,7 @@ const ArticleLayoutView = ({type, data}) => {
             />
           </p>
         </div>
-        <Navigationbar />
+        <ArticleBar />
       </div>
     </div>
   );

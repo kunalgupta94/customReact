@@ -13,7 +13,12 @@ class Sidebar extends React.Component {
   componentDidMount() {
     const closeSidebar = e => {
       const { isCollapsed } = this.state;
-      if (e.target.className === 'maindiv' && isCollapsed == false) {
+      if (
+        e.target.id !== "editableInput" &&
+        e.target.id !== "editEditableInputTitle" &&
+        !e.path.includes(this.sidebarRef.current) &&
+        isCollapsed === false
+      ) {
         this.setCollapsed(true);
       }
     };

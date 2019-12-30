@@ -64,6 +64,7 @@ class EditableText extends Component {
           rows={rows}
           autoFocus
           className="editableInput editEditableInputTitle"
+          id="editEditableInputTitle"
           type="text"
           value={text}
           onChange={e => this.handleInput(e)}
@@ -73,13 +74,14 @@ class EditableText extends Component {
       ) : (
         <span
           className="editableInput editHover"
+          id="editableInput"
           onDoubleClick={() => this.setState({ edit: true })}
         >
           {text}
         </span>
       )
     ) : (
-      <span className="editableInput">{text}</span>
+      <span id="nonEditableInput" className="editableInput">{text}</span>
     );
   }
 }
