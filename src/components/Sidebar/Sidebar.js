@@ -4,22 +4,19 @@ import "./sidebar.css";
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isCollapsed: true
-    };
     this.sidebarRef = React.createRef();
     this.closeSidebar = this.closeSidebar.bind(this);
   }
 
   closeSidebar(e) {
-    const { isCollapsed } = this.state;
+    const { isCollapsed, setSidebarCollapsed } = this.props;
     if (
-      e.target.id !== "editableInput" &&
-      e.target.id !== "editEditableInputTitle" &&
       !e.path.includes(this.sidebarRef.current) &&
-      isCollapsed === false
+      isCollapsed === false &&
+      !e.path.find(val => val.id === 'hamburger')
     ) {
-      this.setCollapsed(true);
+      console.log("rendered")
+      setSidebarCollapsed(true)
     }
   }
 
@@ -38,13 +35,13 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    const { isCollapsed } = this.state;
+    const { isCollapsed, setSidebarCollapsed, children } = this.props;
     return (
       <div
         ref={this.sidebarRef}
-        className={`sidebar ${isCollapsed ? "sidebarCollpased" : null}`}
+        className={`sidebar`}
       >
-        <button onClick={() => this.setCollapsed(!isCollapsed)}>></button>
+        {children}
       </div>
     );
   }

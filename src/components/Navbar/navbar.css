@@ -14,4 +14,9 @@
     border: none;
     display: flex;
     align-self: center;
+    cursor: pointer;
+}
+
+.navbar_hamburger_options:focus {
+    outline: none;
 }

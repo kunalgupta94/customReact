@@ -50,6 +50,7 @@ class ArticleLayout extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return this.renderComponentWithData(this.typeComponent.readAndWrite);
   }
 }

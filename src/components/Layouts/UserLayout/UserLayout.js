@@ -15,7 +15,7 @@ const UserLayout = () => {
     }
   `;
   return (
-    <div>
+    <>
       <header className="user_header"></header>
       <Query query={articleQuery}>
         {({ loading, err, data }) => {
@@ -27,7 +27,7 @@ const UserLayout = () => {
           return null;
         }}
       </Query>
-    </div>
+    </>
   );
 };
 

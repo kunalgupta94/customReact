@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
-import './navbar.css'
-import Hamburger from '../../assets/Hamburger'
+import React, { Component } from "react";
+import "./navbar.css";
+import Hamburger from "../../assets/Hamburger";
 class Navbar extends Component {
-    render() {
-        return (
-            <nav className="navbar_main">
-                <button className="navbar_hamburger_options">
-                <Hamburger />
-                </button>
-            </nav>
-        )
-    }
+  render() {
+    const { setSidebarCollapsed, isCollapsed } = this.props;
+    return (
+      <nav className="navbar_main">
+        <button
+          onClick={() => setSidebarCollapsed(!isCollapsed)}
+          className="navbar_hamburger_options"
+          id="hamburger"
+        >
+          <Hamburger />
+        </button>
+      </nav>
+    );
+  }
 }
 
-export default Navbar
+export default Navbar;

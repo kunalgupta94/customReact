@@ -16,7 +16,14 @@ class App extends React.Component {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path={Routes.article} component={ArticleLayout} />
+          <Route
+            path={Routes.article}
+            render={props => (
+              <MainLayout>
+                <ArticleLayout {...props} />
+              </MainLayout>
+            )}
+          />
           <Route path="/">
             <MainLayout>
               <UserLayout />

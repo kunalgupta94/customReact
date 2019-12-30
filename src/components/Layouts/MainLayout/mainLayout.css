@@ -1,4 +1,12 @@
 .main_main {
-    padding: 5.5vh 0;
+    padding: 5.5vh 0 0 0;
     width: 100%;
+    display: flex;
+}
+
+.mainLayout_children {
+    width: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+    display: block;
 }

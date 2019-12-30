@@ -26,13 +26,7 @@
 
 .contentContainer {
   padding: 0 10vw;
-}
-
-.maindiv {
-  flex-direction: column;
-  overflow-y: scroll;
-  display: block;
-  width: 100%;
+  width: 100;
 }
 
 .sidebardiv {

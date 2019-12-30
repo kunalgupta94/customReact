@@ -1,3 +1,8 @@
+:root {
+  --sidebar-width: 25vw
+}
+
+
 .sidebar {
   background-color: var(--sidebar-color);
   width: 25vw;
