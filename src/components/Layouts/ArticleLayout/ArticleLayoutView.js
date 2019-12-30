@@ -4,7 +4,7 @@ import Sidebar from "../../Sidebar/Sidebar";
 import ArticleBar from "../../ArticleBar/ArticleBar";
 import EditableText from "../../EditableInput/EditableText";
 
-const ArticleLayoutView = ({ type, data }) => {
+const ArticleLayoutView = ({ type, data, onChange }) => {
   const typeComponent = {
     new: "new",
     readOnly: "readOnly",
@@ -18,6 +18,7 @@ const ArticleLayoutView = ({ type, data }) => {
           <EditableText
             edit={type === typeComponent.new || type === typeComponent.edit}
             value={data.title}
+            id="title"
             onChange={e => {
               if (onChange) {
                 onChange(e);
@@ -41,6 +42,7 @@ const ArticleLayoutView = ({ type, data }) => {
               type === typeComponent.edit ||
               type === typeComponent.readAndWrite
             }
+            id="body"
             onChange={e => {
               if (onChange) {
                 onChange(e);
@@ -53,7 +55,7 @@ const ArticleLayoutView = ({ type, data }) => {
           />
         </p>
       </div>
-      <ArticleBar />
+      {type !== "new" ? <ArticleBar /> : null}
     </>
   );
 };

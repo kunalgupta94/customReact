@@ -3,7 +3,7 @@ import "./navbar.css";
 import Hamburger from "../../assets/Hamburger";
 class Navbar extends Component {
   render() {
-    const { setSidebarCollapsed, isCollapsed } = this.props;
+    const { setSidebarCollapsed, isCollapsed, children } = this.props;
     return (
       <nav className="navbar_main">
         <button
@@ -13,6 +13,7 @@ class Navbar extends Component {
         >
           <Hamburger />
         </button>
+        {children}
       </nav>
     );
   }

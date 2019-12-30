@@ -6,9 +6,10 @@ import ArticleLayoutView from "../../components/Layouts/ArticleLayout/ArticleLay
 class ArticleLayout extends React.Component {
   constructor(props) {
     super(props);
+    this.onSubmit = this.onSubmit.bind(this);
     this.state = {
-      title: "Title Text",
-      body: "Body Text"
+      title: "",
+      body: ""
     };
     this.typeComponent = {
       new: "new",
@@ -18,9 +19,48 @@ class ArticleLayout extends React.Component {
     };
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+    const { client } = this.props;
+    const { title, body } = this.state;
+    const createArticle = gql`
+    mutation {
+      createArticle(input: {
+        title:"${title}"
+        body: "${body}"
+        batch: "5e09c70d5786242caf0b224e"
+      }){
+        _id
+        title
+        body
+        createdAt
+        createdBy
+        batch
+      }
+    }
+    `;
+    client
+      .mutate({
+        mutation: createArticle
+      })
+      .then(res => console.log(res));
+  }
+
+  onChnageHandler(event) {
+    this.setState({ [event.target.id]: event.target.value });
+  }
+
   renderNewComponent() {
+    const { title, body } = this.state;
     return (
-      <ArticleLayoutView type={this.typeComponent.new} data={this.state} />
+      <form onSubmit={this.onSubmit}>
+        <button disabled={title === '' || body === ''} type="submit">Submit</button>
+        <ArticleLayoutView
+          type={this.typeComponent.new}
+          data={this.state}
+          onChange={value => this.onChnageHandler(value)}
+        />
+      </form>
     );
   }
 
@@ -50,8 +90,12 @@ class ArticleLayout extends React.Component {
   }
 
   render() {
-    console.log(this.props)
-    return this.renderComponentWithData(this.typeComponent.readAndWrite);
+    const { type } = this.props;
+    if (type === "new") {
+      return this.renderNewComponent();
+    } else {
+      return this.renderComponentWithData(this.typeComponent.readAndWrite);
+    }
   }
 }
 

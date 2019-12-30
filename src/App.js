@@ -12,24 +12,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="main">
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route
-            path={Routes.article}
-            render={props => (
-              <MainLayout>
-                <ArticleLayout {...props} />
-              </MainLayout>
-            )}
-          />
-          <Route path="/">
-            <MainLayout>
+        <MainLayout>
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path={Routes.article} component={ArticleLayout} />
+            <Route path="/newArticle">
+              <ArticleLayout type={"new"} />
+            </Route>
+            <Route path="/">
               <UserLayout />
-            </MainLayout>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </MainLayout>
       </div>
     );
   }

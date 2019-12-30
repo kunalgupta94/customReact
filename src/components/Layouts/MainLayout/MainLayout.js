@@ -2,6 +2,7 @@ import React from "react";
 import "./mainLayout.css";
 import Navbar from "../../Navbar/Navbar";
 import Sidebar from "../../Sidebar/Sidebar";
+import { Link } from "react-router-dom";
 
 class MainLayout extends React.PureComponent {
   constructor(props) {
@@ -26,7 +27,12 @@ class MainLayout extends React.PureComponent {
         <Navbar
           isCollapsed={isCollapsed}
           setSidebarCollapsed={this.setSidebarCollapsed}
-        />
+        >
+          <Link to="/">Home</Link>
+          <button>
+            <Link to={`/newArticle`}>Create Article</Link>
+          </button>
+        </Navbar>
         <main className="main_main">
           {!isCollapsed ? (
             <Sidebar

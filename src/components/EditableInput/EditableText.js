@@ -7,25 +7,25 @@ class EditableText extends React.PureComponent {
     this.inputRef = React.createRef();
     this.state = {
       text: "",
-      edit: false
+      editLayer: false
     };
     this.listnerHandler = this.listnerHandler.bind(this);
   }
 
   listnerHandler(e) {
-    const { text } = this.state;
-    const { editable } = this.props;
-    if (editable && e.target !== this.inputRef.current && text !== "") {
-      this.setState({ edit: false });
+    const { text, } = this.state;
+    const { editable, edit } = this.props;
+    if (editable && e.target !== this.inputRef.current && text !== "" && edit !== true) {
+      this.setState({ editLayer: false });
     }
   }
 
   componentDidMount() {
     const { edit, editable, value } = this.props;
-    this.setState({ edit: edit, text: value }, () => {
+    this.setState({ editLayer: edit, text: value }, () => {
       const { text } = this.state;
       if (editable && text === "") {
-        this.setState({ edit: true });
+        this.setState({ editLayer: true });
       }
     });
     window.addEventListener("mousedown", this.listnerHandler);
@@ -51,10 +51,10 @@ class EditableText extends React.PureComponent {
   }
 
   render() {
-    const { editable, maxLength, rows, placeholder } = this.props;
-    const { text, edit } = this.state;
+    const { editable, maxLength, rows, placeholder, id } = this.props;
+    const { text, editLayer } = this.state;
     return editable ? (
-      edit ? (
+      editLayer ? (
         <textarea
           onFocus={e => {
             this.setInputHeight(e.target);
@@ -67,7 +67,7 @@ class EditableText extends React.PureComponent {
           rows={rows}
           autoFocus
           className="editableInput editEditableInputTitle"
-          id="editEditableInputTitle"
+          id={id}
           type="text"
           value={text}
           onChange={e => this.handleInput(e)}
@@ -78,7 +78,7 @@ class EditableText extends React.PureComponent {
         <span
           className="editableInput editHover"
           id="editableInput"
-          onDoubleClick={() => this.setState({ edit: true })}
+          onDoubleClick={() => this.setState({ editLayer: true })}
         >
           {text}
         </span>
