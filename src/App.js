@@ -7,6 +7,7 @@ import Temporary from "./Temporary";
 import "./main.css";
 import MainLayout from "./components/Layouts/MainLayout/MainLayout";
 import UserLayout from "./components/Layouts/UserLayout/UserLayout";
+import ArticleCard from "./components/ArticleCard/ArticleCard";
 
 class App extends React.Component {
   render() {
@@ -22,7 +23,12 @@ class App extends React.Component {
               <ArticleLayout type={"new"} />
             </Route>
             <Route path="/">
-              <UserLayout />
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "20rem" }}>
+                <ArticleCard />
+                <ArticleCard />
+                <ArticleCard />
+                <ArticleCard />
+              </div>
             </Route>
           </Switch>
         </MainLayout>

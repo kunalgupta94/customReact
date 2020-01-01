@@ -1,10 +1,10 @@
 .navbar_main {
-    background-color: var(--main-primary-color);
+    background-color: var(--navbar-color);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 5.5vh;
+    height: 5vh;
     display: flex;
 }
 

@@ -1,20 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700|Montserrat:400,600,700&display=swap');
+
+
 :root {
-  --color-one: #D8DBE2;
-  --color-two: #A9BCD0;
-  --color-threee: #58A4B0; 
-  --color-four: #373F51;
-  --color-five: #1B1B1E;  
-  --main-background-color: #1B1B1E;
+  --color-one: #d8dbe2;
+  --color-two: #a9bcd0;
+  --color-threee: #58a4b0;
+  --color-four: #373f51;
+  --color-five: #1b1b1e;
+  --main-background-color: #1b1b1e;
   --main-primary-color: #58a4b0;
   --sidebar-color: #58a4b0;
   --main-white-color: #fffaff;
   --article-navbar-one: rgba(27, 27, 30, 0);
   --article-navbar-two: rgba(11, 11, 12, 0.7);
   --main-gray: #bfc0c0;
+
+
+  --background-color: #1b1b1e;
+  --navbar-color: rgba(53, 53, 60, 0.81);
+  --primary-color: #58A4B0;
+  --white-color: #FFFAFF;
+  --gray-one-color: #E0E0E0;
+  --gray-two-color: #BDBDBD;
+  --transparent-color-one: rgba(27, 27, 30, 0.7);
+  --transparent-color-two: rgba(53, 53, 60, 0.89);
+}
+
+html {
+  font-size: 62.5%;
 }
 
 .layoutmain {
-  background-color: var(--main-background-color);
+  background-color: var(--background-color);
   height: 100vh;
   width: 100%;
   display: flex;
