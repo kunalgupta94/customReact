@@ -30,6 +30,18 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 1440px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  html {
+    font-size: 100%;
+  }
+}
+
 .layoutmain {
   background-color: var(--background-color);
   height: 100vh;

@@ -1,13 +1,21 @@
+:root {
+  --articleCard-max-width: 20vw;
+  --articleCard-min-width: 260px;
+  --articleCard-img-max-height: calc(var(--articleCard-max-width) / 2);
+  --articleCard-img-min-height: calc(var(--articleCard-min-width) / 2);
+}
+
+
 .articleCard_main {
-  max-width: 20vw;
-  min-width: 260px;
+  max-width: var(--articleCard-max-width);
+  min-width: var(--articleCard-min-width);
   margin: 0.8rem;
 }
 
 .articleCard-img-container {
   position: relative;
-  max-height: 10vw;
-  min-height: 180px;
+  max-height: var(--articleCard-img-max-height);
+  min-height: var(--articleCard-img-min-height);
 }
 
 .articleCard-img {
@@ -26,7 +34,7 @@
 .articlCard-head-batchName {
   display: flex;
   align-self: flex-end;
-  width: 200px;
+  width: 18rem;
   font-size: 1.6rem;
   text-align: left;
   font-family: "Montserrat", sans-serif;
@@ -52,9 +60,6 @@
   font-size: 1.2rem;
   color: var(--gray-one-color);
   text-align: left;
-  align-self: flex-end;
-  height: 2.5vh;
-  padding: .5rem;
 }
 
 .articleCard-overlay {
@@ -74,7 +79,7 @@
 }
 
 .articleCard-reads {
-  padding: 1px 6px;
+  padding: 0.1rem 0.6rem;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
@@ -109,6 +114,7 @@
   color: var(--gray-two-color);
   margin: 0 1.5rem;
 }
+
 
 /* .articlCard-overlay-foot {
   display: flex;
